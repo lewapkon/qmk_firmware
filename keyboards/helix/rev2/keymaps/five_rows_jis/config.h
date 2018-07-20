@@ -21,8 +21,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef CONFIG_USER_H
 #define CONFIG_USER_H
 
-#include "../../config.h"
-
 /* Use I2C or Serial */
 
 #define USE_I2C
@@ -58,8 +56,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #else
   #error "expected HELIX_ROWS 4 or 5"
 #endif
-
-#define USE_SERIAL_PD2
 
 #define PREVENT_STUCK_MODIFIERS
 #define TAPPING_FORCE_HOLD
@@ -116,6 +112,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   // fix iPhone and iPad power adapter issue
   // iOS device need lessthan 100
   #define USB_MAX_POWER_CONSUMPTION 100
+#endif
+
+#ifdef MOUSEKEY_ENABLE
+  #undef MOUSEKEY_INTERVAL
+  #define MOUSEKEY_INTERVAL 0
+
+  #undef MOUSEKEY_TIME_TO_MAX
+  #define MOUSEKEY_TIME_TO_MAX 150
+
+  #undef MOUSEKEY_MAX_SPEED
+  #define MOUSEKEY_MAX_SPEED 3
+
+  #undef MOUSEKEY_MOVE_DELTA
+  #define MOUSEKEY_MOVE_DELTA 5
+
+  #undef MOUSEKEY_DELAY
+  #define MOUSEKEY_DELAY 0
 #endif
 
 #endif /* CONFIG_USER_H */
