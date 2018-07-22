@@ -8,8 +8,7 @@
     // #define STARTUP_SONG SONG(NO_SOUND)
 
     #define DEFAULT_LAYER_SONGS { SONG(QWERTY_SOUND), \
-                                  SONG(COLEMAK_SOUND), \
-                                  SONG(DVORAK_SOUND) \
+                                  SONG(ONE_UP_SOUND)  \
                                 }
 #endif
 
@@ -42,5 +41,8 @@
 #define PREVENT_STUCK_MODIFIERS
 #define FORCE_NKRO
 #define PERMISSIVE_HOLD
+
+#undef BACKLIGHT_LEVELS
+#define BACKLIGHT_LEVELS 5
 
 #endif
